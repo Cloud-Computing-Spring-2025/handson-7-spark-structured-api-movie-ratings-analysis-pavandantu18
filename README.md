@@ -291,47 +291,57 @@ Your assignment will be evaluated based on the following criteria:
 
 Good luck, and happy analyzing!
 
+## 📊 Analysis and Findings
 
-📊 Analysis and Findings
-1️⃣ Detecting Binge-Watching Patterns
-Objective: Identify which age groups binge-watch the most.
+### **1️⃣ Detecting Binge-Watching Patterns**
+**Objective:** Identify which age groups binge-watch the most.
 
-Approach:
+**Approach:**
+- Filter users where `IsBingeWatched = True`.
+- Group by `AgeGroup` and count binge-watchers.
+- Compute the percentage of binge-watchers per age group.
 
-Filter users where IsBingeWatched = True.
-Group by AgeGroup and count binge-watchers.
-Compute the percentage of binge-watchers per age group.
-Findings:
+**Findings:**
+```
+AgeGroup,BingeWatchers,TotalUsers,Percentage
+Senior,16,34,47.06
+Adult,11,32,34.38
+Teen,11,34,32.35
+```
 
-Age Group	Binge Watchers	Total Users	Percentage
-Senior	16	34	47.06%
-Adult	11	32	34.38%
-Teen	11	34	32.35%
-2️⃣ Identifying Churn Risk Users
-Objective: Detect users with canceled subscriptions and low engagement.
+---
 
-Approach:
+### **2️⃣ Identifying Churn Risk Users**
+**Objective:** Detect users with canceled subscriptions and low engagement.
 
-Filter users where SubscriptionStatus = 'Canceled' and WatchTime < 100.
-Count the total number of at-risk users.
-Findings:
+**Approach:**
+- Filter users where `SubscriptionStatus = 'Canceled'` and `WatchTime < 100`.
+- Count the total number of at-risk users.
 
-Total Users	Churn Risk Users
-10	Users with low watch time & canceled subscriptions
-3️⃣ Analyzing Movie-Watching Trends
-Objective: Understand yearly trends in movie consumption.
+**Findings:**
+```
+Total Users,Churn Risk Users
+10,Users with low watch time & canceled subscriptions
+```
 
-Approach:
+---
 
-Group by WatchedYear and count movies watched.
-Order results chronologically to observe trends.
-Findings:
+### **3️⃣ Analyzing Movie-Watching Trends**
+**Objective:** Understand yearly trends in movie consumption.
 
-Watched Year	Movies Watched
-2018	23
-2019	15
-2020	18
-2021	13
-2022	17
-2023	14
+**Approach:**
+- Group by `WatchedYear` and count movies watched.
+- Order results chronologically to observe trends.
 
+**Findings:**
+```
+WatchedYear,Movies Watched
+2018,23
+2019,15
+2020,18
+2021,13
+2022,17
+2023,14
+```
+
+---
