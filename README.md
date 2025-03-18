@@ -112,6 +112,11 @@ You can run the analysis tasks either locally or using Docker.
 
 4. **Run Your PySpark Scripts Using `spark-submit`**:
    ```bash
+   docker cp input my-spark-master:/opt/bitnami/spark                   
+ docker exec -it spark-master bash                                                                                                                                                        
+docker cp my-spark-master:/opt/bitnami/spark/output/binge_watching_patterns.csv /outputs 
+docker cp my-spark-master:/opt/bitnami/spark/outputs/binge_watching_patterns.csv \out                                                                                                   
+                                                                                                                                                               
    spark-submit src/task1_binge_watching_patterns.py
    spark-submit src/task2_churn_risk_users.py
    spark-submit src/task3_movie_watching_trends.py
